@@ -31,8 +31,6 @@ html[data-theme=dark]{
 }
 .k-land{--ac:var(--k-land)} .k-water{--ac:var(--k-water)} .k-city{--ac:var(--k-city)} .k-cave{--ac:var(--k-cave)}
 .k-city .alabel{color:#2b1500}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:.78rem;color:var(--muted);font-weight:600}
-.legend .sw{display:inline-block;width:.85rem;height:.85rem;border-radius:3px;margin-right:5px;vertical-align:-2px;border:1px solid rgba(0,0,0,.25)}
 *{box-sizing:border-box}
 button,input,select{font-family:inherit}
 html{scroll-padding-top:170px;font-size:17px}
@@ -114,15 +112,25 @@ mark{background:#ffe066;color:#000;border-radius:3px;padding:0 1px;box-shadow:0 
   .row>.meth{flex-direction:row;align-items:baseline;gap:10px;padding:8px 12px}
   .same{grid-column:auto}
   .same .list{max-width:none}
-  html{scroll-padding-top:12px}
-  header.top{position:static}
-  .topbtn{position:fixed;right:14px;bottom:14px;z-index:30;box-shadow:0 2px 8px rgba(0,0,0,.3);padding:10px 16px}
+  header.top{padding:8px 12px 8px}
+  .bar{display:block}
+  h1{margin-bottom:4px}
+  h1 small{display:none}
+  .titlerow{gap:6px}
+  .right{gap:6px}
+  .by{display:none}
+  .controls{gap:6px;margin-top:6px}
+  #q{padding:7px 10px;flex:1 1 100%}
+  #jump{flex:1 1 auto;min-width:0;max-width:60%}
+  .chip{padding:4px 10px}
+  .tbtn,.topbtn,.fs button{padding:5px 10px}
+  a.dl{padding:5px 12px}
   h1{font-size:1.2rem}
   h1 small{font-size:.7rem;letter-spacing:1.4px}
   .right{align-items:flex-start;width:100%}
   .credit{justify-content:flex-start}
   .titlerow{flex-wrap:wrap}
-  #count{margin-left:0;width:100%}
+  #count{margin-left:auto;width:auto}
 }
 </style>
 </head>
@@ -135,7 +143,6 @@ mark{background:#ffe066;color:#000;border-radius:3px;padding:0 1px;box-shadow:0 
     <div class="chips" id="chips"></div>
     <span id="count"></span>
   </div>
-  <div class="legend"><span><i class="sw" style="background:var(--k-land)"></i>Land route</span><span><i class="sw" style="background:var(--k-water)"></i>Sea route</span><span><i class="sw" style="background:var(--k-city)"></i>City / Town</span><span><i class="sw" style="background:var(--k-cave)"></i>Cave / Dungeon</span></div>
 </div></header>
 <main id="main"></main>
 <script>
@@ -187,6 +194,8 @@ try{const v=parseInt(localStorage.getItem('fsIdx'));if(v>=0&&v<SIZES.length)si=v
 function applyFs(){document.documentElement.style.fontSize=SIZES[si]+'px';$('fsm').disabled=si===0;$('fsp').disabled=si===SIZES.length-1;try{localStorage.setItem('fsIdx',si)}catch(e){}}
 $('fsm').onclick=()=>{if(si>0){si--;applyFs()}};
 $('fsp').onclick=()=>{if(si<SIZES.length-1){si++;applyFs()}};
+function padHdr(){document.documentElement.style.scrollPaddingTop=(document.querySelector('header.top').offsetHeight+8)+'px'}
+window.addEventListener('resize',padHdr);window.addEventListener('load',padHdr);padHdr();
 $('top').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 let theme;try{theme=localStorage.getItem('theme')}catch(e){}
 if(theme!=='dark'&&theme!=='light')theme=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';

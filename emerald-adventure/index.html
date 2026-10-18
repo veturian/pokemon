@@ -39,6 +39,10 @@ header.top{position:sticky;top:0;z-index:20;background:var(--hdr);backdrop-filte
 .bar{max-width:1280px;margin:0 auto}
 h1{margin:0 0 8px;font-family:Bungee,"Arial Black",Impact,sans-serif;font-weight:400;font-size:1.9rem;line-height:1.1;letter-spacing:.5px;background:linear-gradient(90deg,#c0392b 0%,#d9822b 38%,#2f6db5 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.18))}
 h1 small{display:block;font-family:Calibri,Carlito,"Segoe UI",sans-serif;font-size:.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;-webkit-text-fill-color:var(--muted);color:var(--muted);margin-top:4px;filter:none}
+a.back{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;text-decoration:none;font-weight:700;font-size:.85rem;color:var(--ink);background:var(--card);border:1px solid var(--ctl);border-radius:10px;padding:5px 11px;margin:0 0 8px;white-space:nowrap}
+a.back:hover{background:var(--hover)}
+a.back:focus-visible{outline:3px solid #ffe066;outline-offset:2px}
+.left{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
 .titlerow{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none}
 .credit{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
@@ -130,13 +134,14 @@ mark{background:#ffe066;color:#000;border-radius:3px;padding:0 1px;box-shadow:0 
   .right{align-items:flex-start;width:100%}
   .credit{justify-content:flex-start}
   .titlerow{flex-wrap:wrap}
+  a.back{margin:0 0 4px;padding:4px 10px;font-size:.8rem}
   #count{margin-left:auto;width:auto}
 }
 </style>
 </head>
 <body>
 <header class="top"><div class="bar">
-  <div class="titlerow"><h1>Pokémon Emerald Adventure<small>Wild Encounters Guide</small></h1><div class="right"><div class="credit"><span class="by">Hack created by <b>EmperorNOR</b></span><a class="dl" href="https://www.hackdex.app/hack/pokemon-emerald-adventure" target="_blank" rel="noopener noreferrer">Download on Hackdex<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="tools"><div class="fs" role="group" aria-label="Text size"><button id="fsm" title="Smaller text" aria-label="Smaller text">A−</button><button id="fsp" title="Larger text" aria-label="Larger text">A+</button></div><button id="theme" class="tbtn" title="Switch light/dark mode">🌙 Dark</button><button id="top" class="topbtn" title="Back to top">↑ Top</button></div></div></div>
+  <div class="titlerow"><div class="left"><a class="back" href="https://veturian.github.io/pokemon-encounters/">← Return to Hack List</a><h1>Pokémon Emerald Adventure<small>Wild Encounters Guide</small></h1></div><div class="right"><div class="credit"><span class="by">Hack created by <b>EmperorNOR</b></span><a class="dl" href="https://www.hackdex.app/hack/pokemon-emerald-adventure" target="_blank" rel="noopener noreferrer">Download on Hackdex<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><div class="tools"><div class="fs" role="group" aria-label="Text size"><button id="fsm" title="Smaller text" aria-label="Smaller text">A−</button><button id="fsp" title="Larger text" aria-label="Larger text">A+</button></div><button id="theme" class="tbtn" title="Switch light/dark mode">🌙 Dark</button><button id="top" class="topbtn" title="Back to top">↑ Top</button></div></div></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Search species, route, method…" autocomplete="off">
     <select id="jump"><option value="">Jump to area…</option></select>

@@ -187,9 +187,9 @@ mark{background:#ffe066;color:#000;border-radius:3px;padding:0 1px;box-shadow:0 
 .fline.e{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
 #fpanel .chip{opacity:.55;font-size:.8rem;padding:.25rem .8rem;white-space:nowrap}
 #fpanel .chip.on{opacity:1}
-.ftype{display:block;width:100%;max-width:2.6rem;aspect-ratio:1/1;border-radius:50%;border:3px solid transparent;padding:0;background:none;cursor:pointer;opacity:.8}
-.ftype.on{opacity:1;border-color:var(--ink)}
-.ftype .ty{display:block;width:100%;height:100%;margin:0}
+.ftype{display:block;width:100%;max-width:2.6rem;height:auto;line-height:0;border-radius:50%;border:0;padding:0;margin:3px auto;background:none;cursor:pointer;opacity:.8}
+.ftype.on{opacity:1;box-shadow:0 0 0 3px var(--ink)}
+.ftype .ty{display:block;width:100%;height:auto;aspect-ratio:1/1;margin:0}
 .fev{border:2px solid var(--line);border-radius:10px;padding:.25rem .5rem;font-size:.85rem;font-weight:700;background:var(--chipbg);color:var(--ink);cursor:pointer;min-width:0}
 .fev.on{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
 .ffoot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--hair);padding:.65rem 0;position:sticky;bottom:0;background:var(--card)}

@@ -52,6 +52,14 @@
  "entries": [
   {
    "date": "2026-11-14",
+   "hacks": [
+    "silver-mirror"
+   ],
+   "title": "Item, TM, and Encounter updates.",
+   "details": "Added Exp. Share, TMs and pager upgrades, updated wild encounter levels, added Apricorn Balls details, and fixed Sun Stone and Dusk Stone locations."
+  },
+  {
+   "date": "2026-11-14",
    "hacks": [],
    "title": "Small tweaks to header/update banner",
    "site": true,

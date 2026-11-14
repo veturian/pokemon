@@ -52,21 +52,9 @@
  "entries": [
   {
    "date": "2026-11-14",
-   "hacks": [
-    "silver-mirror",
-    "phoenix-red",
-    "brisk-emerald",
-    "riverteal",
-    "crystal-inheritance",
-    "elysium",
-    "crestfall",
-    "bills-secret-garden-dx",
-    "ceruleum",
-    "classic",
-    "rowe",
-    "emerald-adventure"
-   ],
+   "hacks": [],
    "title": "Added 'Follow my Progress' option to main page.",
+   "site": true,
    "details": "Added banner for linking to my ROMLog, where I track all ROMs I've played."
   },
   {

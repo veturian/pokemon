@@ -55,7 +55,7 @@
    "hacks": [
     "silver-mirror"
    ],
-   "title": "Correct several shiny palettes.",
+   "title": "Corrected several shiny palettes.",
    "details": "Fixed several shiny palettes that had been unintentionally swapped with regular ones. Toggling to shiny should be correct now for all mons."
   },
   {

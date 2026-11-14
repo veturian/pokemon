@@ -271,15 +271,24 @@ textarea.ufi{min-height:76px;resize:vertical}
 @media (max-width:600px){.uact{position:static;padding:0 8px 8px}}
 .ustrip{text-align:left}
 .ustrip{box-sizing:border-box;width:100%;max-width:1040px;margin-left:auto;margin-right:auto}
-.rlstrip{display:flex;align-items:center;gap:12px;margin:0 0 12px;padding:7px 14px;border:1px solid var(--ctl);border-radius:12px;background:var(--card);color:var(--ink);font-size:.92rem;min-height:38px;text-decoration:none;text-align:left}
+.urow{display:flex;gap:12px;width:100%;max-width:1040px;margin:14px auto 12px}
+.urow>.ustrip,.urow>.rlstrip{flex:1 1 0;min-width:0;width:auto;max-width:none;margin:0}
+.rlstrip{display:flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--ctl);border-radius:12px;background:var(--card);color:#2f6db5;font-size:.92rem;font-weight:800;min-height:38px;text-decoration:none;text-align:left}
 .rlstrip:hover{background:var(--hover)}
 .rlstrip:focus-visible{outline:3px solid #2f6db5;outline-offset:2px}
-.rlstrip>svg{flex:none;color:#2f6db5}
-.rlstrip .rlt{flex:1;min-width:0;color:var(--muted)}
-.rlstrip .rlgo{flex:none;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:#2f6db5;white-space:nowrap}
-html[data-theme=dark] .rlstrip>svg,html[data-theme=dark] .rlstrip .rlgo{color:#78adea}
-.rlstrip:hover .rlgo{gap:9px}
-@media (max-width:520px){.rlstrip .rlt{display:none}.rlstrip{justify-content:center}.rlstrip>svg{display:none}}
+.rlstrip .rlt{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rlstrip svg{flex:none}
+.rlstrip .rlsub{margin-left:7px;font-size:.85rem;font-weight:400;color:var(--muted)}
+.rlstrip .rlsub::before{content:"\00b7\00a0"}
+.rlstrip .rla{transition:transform .15s}
+.rlstrip:hover .rla{transform:translateX(3px)}
+html[data-theme=dark] .rlstrip{color:#78adea}
+.banner{margin-bottom:20px;padding:22px 28px 20px}
+.banner p.sub{margin-top:8px}
+main{padding-top:56px}
+@media (max-width:700px){.urow{flex-direction:column;gap:8px}}
+@media (min-width:701px) and (max-width:1000px),(max-width:520px){.rlstrip{padding-top:5px;padding-bottom:5px}.rlstrip .rlsub{display:block;margin:0;font-size:.78rem;line-height:1.25;overflow:hidden;text-overflow:ellipsis}.rlstrip .rlsub::before{content:none}}
+@media (max-width:600px){.banner{padding:18px 16px 16px}}
 </style>
 <script data-goatcounter="https://veturian.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -295,8 +304,8 @@ html[data-theme=dark] .rlstrip>svg,html[data-theme=dark] .rlstrip .rlgo{color:#7
       <p class="sub">Searchable reference guides for Pokémon ROM hacks.<span class="how">Pick a hack to look things up while you play.</span></p>
     </div>
   </header>
+  <a class="rlstrip" id="rlink" href="https://veturian.github.io/romlog" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="rlt">What am I playing?<span class="rlsub">My Pokémon ROM hack playthroughs</span></span><svg class="rla" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <section id="tools" role="search" aria-label="Find a hack" hidden>
-    <a class="rlstrip" href="https://veturian.github.io/romlog" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="rlt">See which hacks I'm playing and how far I've gotten.</span><span class="rlgo">Follow my progress <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     <div class="tbar">
       <div class="sbox">
         <svg class="mag" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
@@ -764,7 +773,8 @@ var tick=el('span','utick'),pg=el('span','upg'),all=el('span','uall','All update
 pg.setAttribute('aria-hidden','true');
 strip.appendChild(dot);strip.appendChild(tick);strip.appendChild(pg);strip.appendChild(all);
 var tools=document.getElementById('tools');
-if(tools&&tools.parentNode)tools.parentNode.insertBefore(strip,tools);
+var rlink=document.getElementById('rlink');
+if(tools&&tools.parentNode){var urow=el('div','urow');tools.parentNode.insertBefore(urow,tools);urow.appendChild(strip);if(rlink)urow.appendChild(rlink)}
 var items=[],pos=0,timer=null;
 function nameBit(e){var hs=e.hacks||[];return hs.length>1?hs.length+' guides':hs.length?hname(hs[0]):''}
 function buildStrip(){

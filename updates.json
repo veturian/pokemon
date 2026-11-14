@@ -113,8 +113,8 @@
     "crestfall",
     "crystal-inheritance"
    ],
-   "title": "Items tab added",
-   "details": "Every item with a confirmed location, with where to get it and shop prices. TMs and HMs show the move they teach. Crestfall was also checked against ROM v1.2.5 and Classic was rebuilt on the current layout."
+   "title": "Items tabs added",
+   "details": "Every item with a confirmed location, with where to get it and shop prices. TMs and HMs show the move they teach. Crestfall was also checked against ROM v1.2.5."
   },
   {
    "date": "2026-11-07",

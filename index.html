@@ -188,6 +188,88 @@ html[data-theme=dark]{--om:1.12;--k0:#f2705c;--k1:#f5ac5e;--k2:#78adea;--k3:#5cc
 .empty{background:var(--card)}
 /* keep loose text readable wherever a background icon happens to sit */
 footer,.stat,.flab,.ghost b,.ghost span{text-shadow:0 0 3px var(--bg2),0 0 7px var(--bg2),0 0 12px var(--bg2)}
+/* ===== Update log: card dates and the What's new panel ===== */
+a.card{position:relative}
+a.card .body{padding-bottom:32px}
+.upd{position:absolute;right:12px;bottom:8px;border:0;background:transparent;color:var(--muted);font:inherit;font-size:.72rem;font-weight:700;line-height:1.3;padding:2px 7px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.upd:hover,.upd:focus-visible{background:var(--hover);color:var(--ink)}
+.upd:focus-visible{outline:3px solid #2f6db5;outline-offset:1px}
+.upd:empty{display:none}
+.grid.list a.card .body{padding-bottom:12px}
+.grid.list .upd{right:20px;bottom:6px}
+html.uopen{overflow:hidden}
+.uov{position:fixed;inset:0;z-index:50;background:rgba(10,12,16,.62);display:flex;align-items:center;justify-content:center;padding:16px}
+.upan{width:min(680px,100%);max-height:min(86vh,760px);display:flex;flex-direction:column;background:var(--card);color:var(--ink);border:1px solid var(--edge);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.45);text-align:left;overflow:hidden}
+.uhd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px 6px}
+.uhd h2{margin:0;font-size:1.25rem}
+.ux{flex:none;width:36px;height:36px;border:1px solid var(--ctl);border-radius:10px;background:var(--card);color:var(--ink);font-size:1.4rem;line-height:1;cursor:pointer}
+.ux:hover{background:var(--hover)}
+.usub{padding:0 20px 10px;color:var(--muted);font-size:.9rem;min-height:1.4em}
+.usub button{border:0;background:transparent;color:#2f6db5;font:inherit;font-weight:700;cursor:pointer;padding:0;text-decoration:underline}
+html[data-theme=dark] .usub button{color:#7fb0f0}
+.ulist{list-style:none;margin:0;padding:0 12px 14px;overflow:auto;flex:1}
+.uit{border-top:1px solid var(--line);padding:2px 8px}
+.uit>summary,.uit>.urow{display:grid;grid-template-columns:5.2rem 1fr;gap:2px 12px;padding:10px 0;cursor:pointer;list-style:none;align-items:baseline}
+.uit>.urow{cursor:default}
+.uit>summary::-webkit-details-marker{display:none}
+.uit>summary:focus-visible{outline:3px solid #2f6db5;outline-offset:2px;border-radius:6px}
+.ud{font-weight:800;font-size:.9rem;color:var(--muted);white-space:nowrap}
+.ut{font-weight:700}
+.uit>summary .ut::after{content:" ▾";color:var(--muted);font-size:.8em}
+.uit[open]>summary .ut::after{content:" ▴"}
+.uhk{grid-column:2;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.84rem;color:var(--muted)}
+.uhk i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;background:var(--c,#888);vertical-align:0}
+.udt{padding:0 0 12px 5.2rem;margin-left:12px;color:var(--ink);font-size:.93rem;line-height:1.45}
+.uempty{padding:24px 20px;color:var(--muted)}
+@media (max-width:600px){.uit>summary,.uit>.urow{grid-template-columns:1fr}.uhk{grid-column:1}.udt{padding-left:0;margin-left:0}}
+@media (max-width:520px){.grid.list a.card .body{padding-bottom:30px}.grid.list .upd{right:14px;bottom:6px}}
+.ustrip{display:flex;align-items:center;gap:12px;margin:14px 0 12px;padding:7px 14px;border:1px solid var(--ctl);border-radius:12px;background:var(--card);color:var(--ink);font-size:.92rem;cursor:pointer;min-height:38px}
+.ustrip[hidden]{display:none}
+.ustrip:hover{background:var(--hover)}
+.ustrip:focus-visible{outline:3px solid #2f6db5;outline-offset:2px}
+.udot{position:relative;flex:none;width:9px;height:9px;border-radius:50%;background:#2fb26a}
+.udot:after{content:"";position:absolute;inset:0;border-radius:50%;background:#2fb26a;animation:upulse 1.9s ease-out infinite}
+@keyframes upulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(3.2);opacity:0}}
+.utick{position:relative;flex:1;min-width:0;height:1.4em;overflow:hidden}
+.uitem{position:absolute;left:0;right:0;top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s;pointer-events:none}
+.uitem.on{opacity:1;transform:none;pointer-events:auto}
+.uitem b{font-weight:800}.uitem .um{color:var(--muted)}
+.upg{display:flex;gap:4px;flex:none}
+.upg i{width:5px;height:5px;border-radius:50%;background:var(--ctl)}
+.upg i.on{background:var(--ink)}
+.uall{flex:none;color:var(--muted);font-size:.85rem;font-weight:700;white-space:nowrap}
+@media (max-width:520px){.upg{display:none}.uall{font-size:.8rem}}
+@media (prefers-reduced-motion:reduce){.udot:after{animation:none}.uitem{transition:none}}
+.uhr{display:flex;align-items:center;gap:8px}
+.uedtag{font-size:.72rem;font-weight:800;color:#1f7a4d;background:rgba(47,178,106,.16);padding:2px 9px;border-radius:999px}
+html[data-theme=dark] .uedtag{color:#5fd09a}
+.unew,.uib{font:inherit;font-size:.82rem;font-weight:700;border:1px solid var(--ctl);border-radius:9px;background:var(--card);color:var(--ink);padding:5px 11px;cursor:pointer}
+.unew:hover,.uib:hover{background:var(--hover)}
+.uibx{color:#c0392b}html[data-theme=dark] .uibx{color:#f2705c}
+.upri{background:var(--ink);color:var(--card);border-color:transparent}.upri:hover{background:var(--ink);opacity:.88}
+.upri:disabled{opacity:.5}
+.ulink{border:0;background:transparent;color:#2f6db5;font:inherit;font-weight:700;cursor:pointer;padding:0;text-decoration:underline}
+html[data-theme=dark] .ulink{color:#7fb0f0}
+.uerr{margin-top:6px;font-size:.86rem;color:#c0392b}html[data-theme=dark] .uerr{color:#f2705c}
+.uli{position:relative}
+.uact{position:absolute;right:8px;top:8px;display:flex;gap:6px}
+.uli .uit>summary,.uli .uit>.urow{padding-right:0}
+.uli .uact+*{}
+.uform{border-top:1px solid var(--line);padding:12px 8px 14px;display:grid;gap:6px}
+.uflab{font-weight:700;font-size:.85rem;margin-top:4px}
+.ufi{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg1);border:1px solid var(--ctl);border-radius:10px;padding:8px 10px;box-sizing:border-box}
+textarea.ufi{min-height:76px;resize:vertical}
+.ubtns{display:flex;gap:8px;justify-content:flex-end;margin-top:6px}
+.udd{position:relative}
+.uddb{width:100%;min-height:38px;display:flex;flex-wrap:wrap;gap:5px;align-items:center;text-align:left;font:inherit;color:var(--ink);background:var(--bg1);border:1px solid var(--ctl);border-radius:10px;padding:5px 30px 5px 8px;cursor:pointer;position:relative}
+.uddc{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.uph{color:var(--muted)}
+.uchip{font-size:.78rem;font-weight:700;background:var(--hover);border-radius:999px;padding:1px 9px}
+.udpop{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:5;max-height:220px;overflow:auto;background:var(--card);border:1px solid var(--ctl);border-radius:10px;padding:4px 0;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.uopt{display:flex;align-items:center;gap:6px;padding:6px 12px;cursor:pointer;font-size:.92rem}
+.uopt:hover{background:var(--hover)}
+@media (max-width:600px){.uact{position:static;padding:0 8px 8px}}
+.ustrip{text-align:left}
 </style>
 <script data-goatcounter="https://veturian.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -586,6 +668,223 @@ layoutBg();
 if(!reduce){grid.classList.add('boot');setTimeout(function(){grid.classList.remove('boot')},1500)}
 }catch(err){if(window.console)console.error(err)}
 ready();
+})();
+</script>
+<script>
+(function(){
+try{
+var SEED={"hacks":[{"id":"emerald-adventure","name":"Emerald Adventure"},{"id":"rowe","name":"R.O.W.E."},{"id":"classic","name":"Classic"},{"id":"ceruleum","name":"Ceruleum"},{"id":"bills-secret-garden-dx","name":"Bill's Secret Garden DX"},{"id":"crestfall","name":"Crestfall"},{"id":"elysium","name":"Elysium"},{"id":"crystal-inheritance","name":"Crystal Inheritance"},{"id":"riverteal","name":"RiverTeal"},{"id":"brisk-emerald","name":"Brisk Emerald"},{"id":"phoenix-red","name":"Phoenix Red"}],"entries":[{"date":"2026-11-13","hacks":["phoenix-red"],"title":"Phoenix Red added","details":"New guide with the Pokédex, Wild Encounters and Items tabs."},{"date":"2026-11-11","hacks":["crestfall"],"title":"Updated for Crestfall 2.0","details":"Keldeo is now listed as roaming. Added the Tera Orb, Bottle Caps, Auspicious and Malicious Armor and the type Tera Shards to the Items tab, plus a second Master Ball source. Added a Join the Discord button."},{"date":"2026-11-11","hacks":["riverteal"],"title":"Discord invite link updated","details":"The Discord button now uses a permanent invite link."},{"date":"2026-11-09","hacks":["emerald-adventure","rowe","classic","ceruleum","bills-secret-garden-dx","crestfall","elysium","crystal-inheritance","riverteal","brisk-emerald"],"title":"Privacy-friendly visit counter added","details":"Added an anonymous visit counter (GoatCounter) to every guide. Nothing about the guides' content changed."},{"date":"2026-11-08","hacks":["rowe"],"title":"Items tab added; guide rebuilt for v2.1.9.1 Experimental","details":"Pokédex, Wild Encounters and the new Items tab now match the current Experimental build."},{"date":"2026-11-08","hacks":["riverteal"],"title":"White Flute and Soul Dew added; areas reordered","details":"Added White Flute (Grindel City) and Soul Dew (held by Latias and Latios). Wild Encounters areas now follow the story order from Route 310 onward."},{"date":"2026-11-07","hacks":["bills-secret-garden-dx","brisk-emerald","ceruleum","classic","crestfall","crystal-inheritance"],"title":"Items tab added","details":"Every item with a confirmed location, with where to get it and shop prices. TMs and HMs show the move they teach. Crestfall was also checked against ROM v1.2.5 and Classic was rebuilt on the current layout."},{"date":"2026-11-07","hacks":["riverteal"],"title":"Updated for the creator's latest release","details":"Pokédex, moves, encounters and items updated for the new version. The water route label now reads River route."},{"date":"2026-11-05","hacks":["riverteal"],"title":"Areas updated at the creator's request","details":"Removed seven areas that are not in the game. Routes 303 and 314 are listed again with No wild encounters."},{"date":"2026-11-02","hacks":["riverteal"],"title":"Items tab added; fishing and route order corrected","details":"Added the Items tab. Fishing now uses the hack's single Rod, and the first areas follow the order you reach them."},{"date":"2026-11-01","hacks":["brisk-emerald"],"title":"Fixed a malformed Mega name","details":"One Mega Dragonite entry showed a doubled letter in its name."},{"date":"2026-10-31","hacks":["riverteal","brisk-emerald"],"title":"RiverTeal and Brisk Emerald added","details":"New guides with the Pokédex and Wild Encounters tabs."},{"date":"2026-10-30","hacks":["crystal-inheritance"],"title":"Crystal Inheritance added","details":"New guide with the Pokédex and Wild Encounters tabs."},{"date":"2026-10-29","hacks":["elysium"],"title":"Elysium added","details":"New guide with the Pokédex and Wild Encounters tabs, covering both parts of the game."},{"date":"2026-10-29","hacks":["rowe"],"title":"Pokédex tab added","details":"Full Pokédex with stats, moves, evolutions and where to find each Pokémon."},{"date":"2026-10-28","hacks":["crestfall","bills-secret-garden-dx"],"title":"Crestfall and Bill's Secret Garden DX added","details":"New guides with the Pokédex and Wild Encounters tabs."},{"date":"2026-10-27","hacks":["ceruleum"],"title":"Ceruleum added","details":"New guide with the Pokédex and Wild Encounters tabs."}]};
+var data=SEED;
+var OWNER='veturian',REPO='pokemon',BRANCH='main',PATH='updates.json';
+var API='https://api.github.com/repos/'+OWNER+'/'+REPO;
+var grid=document.getElementById('grid');if(!grid)return;
+var cards=[].slice.call(grid.querySelectorAll('a.card'));
+var html=document.documentElement;
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n}
+function cid(c){return(c.getAttribute('href')||'').replace(/\/$/,'')}
+var colors={},cname={};
+cards.forEach(function(c){var id=cid(c);colors[id]=getComputedStyle(c).getPropertyValue('--c').trim();
+  var h=c.querySelector('h2');cname[id]=h?h.textContent.replace(/^\s*Pok[eé]mon\s+/i,'').trim():id});
+function valid(d){return d&&Array.isArray(d.entries)&&Array.isArray(d.hacks)}
+function hname(id){if(cname[id])return cname[id];var h=data.hacks.filter(function(x){return x.id===id})[0];return h?h.name:id}
+function fmtDate(s){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s);if(!m)return s;
+  var d=new Date(+m[1],+m[2]-1,+m[3]),o={month:'short',day:'numeric'};
+  if(d.getFullYear()!==new Date().getFullYear())o.year='numeric';
+  return d.toLocaleDateString('en-US',o)}
+function today(){var d=new Date(),p=function(n){return(n<10?'0':'')+n};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())}
+function sorted(){return data.entries.map(function(e,i){return{e:e,i:i}}).sort(function(a,b){
+  return a.e.date<b.e.date?1:a.e.date>b.e.date?-1:a.i-b.i}).map(function(x){return x.e})}
+/* ---- editor state (token lives only in this browser) ---- */
+var tok='';try{tok=localStorage.getItem('gh_token')||''}catch(e){}
+var editor=!!tok,checked=false,tokMsg='';
+function hdr(){return{'Authorization':'Bearer '+tok,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}}
+function b64e(s){var by=new TextEncoder().encode(s),bin='';by.forEach(function(x){bin+=String.fromCharCode(x)});return btoa(bin)}
+function b64d(s){var bin=atob(s.replace(/\s/g,'')),by=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)by[i]=bin.charCodeAt(i);return new TextDecoder().decode(by)}
+function signOut(){tok='';editor=false;checked=false;try{localStorage.removeItem('gh_token')}catch(e){}editForm=null;render()}
+function verify(){
+  if(!editor||checked)return;checked=true;
+  fetch(API,{headers:hdr()}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+    if(!j.permissions||!j.permissions.push)throw 0}).catch(function(){tokMsg='This device’s token isn’t accepted any more, so edits will fail. Sign out and add a new one.';render()});
+}
+function loadFresh(){
+  return fetch(API+'/contents/'+PATH+'?ref='+BRANCH+'&_='+Date.now(),{headers:hdr(),cache:'no-store'}).then(function(r){
+    if(r.status===404)return{d:JSON.parse(JSON.stringify(data)),sha:null};
+    if(!r.ok)throw new Error('GitHub answered '+r.status);
+    return r.json().then(function(j){var d=JSON.parse(b64d(j.content));if(!valid(d))throw new Error('updates.json has an unexpected shape');return{d:d,sha:j.sha}})});
+}
+function commit(mut,message){
+  function go(retry){return loadFresh().then(function(f){mut(f.d);
+    var body={message:message,content:b64e(JSON.stringify(f.d,null,1)+'\n'),branch:BRANCH};if(f.sha)body.sha=f.sha;
+    return fetch(API+'/contents/'+PATH,{method:'PUT',headers:Object.assign({'Content-Type':'application/json'},hdr()),body:JSON.stringify(body)}).then(function(r){
+      if((r.status===409||r.status===422)&&retry)return go(false);
+      if(!r.ok)throw new Error('GitHub answered '+r.status+(r.status===401||r.status===403||r.status===404?' (token needs Contents: Read and write on '+OWNER+'/'+REPO+')':''));
+      data=f.d;paint();buildStrip();return})})}
+  return go(true);
+}
+/* ---- card badges ---- */
+function paint(){
+  var last={};sorted().forEach(function(e){(e.hacks||[]).forEach(function(h){if(!last[h])last[h]=e.date})});
+  cards.forEach(function(c){
+    var id=cid(c),b=c.querySelector('.upd');
+    if(!b){b=el('span','upd');b.setAttribute('role','button');b.tabIndex=0;
+      var go=function(e){e.preventDefault();e.stopPropagation();openPanel(id)};
+      b.addEventListener('click',go);
+      b.addEventListener('auxclick',function(e){e.preventDefault();e.stopPropagation()});
+      b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')go(e)});
+      c.appendChild(b)}
+    if(last[id]){b.textContent='Updated '+fmtDate(last[id]);b.title='Last update to this guide. Click to see what changed.';
+      b.setAttribute('aria-label','Last updated '+fmtDate(last[id])+'. See what changed.')}
+    else{b.textContent='';b.removeAttribute('title')}
+  });
+}
+/* ---- latest-update strip ---- */
+var strip=el('div','ustrip');strip.setAttribute('role','button');strip.tabIndex=0;
+strip.setAttribute('aria-label','Latest updates. Open the full list.');
+var dot=el('span','udot');dot.setAttribute('aria-hidden','true');
+var tick=el('span','utick'),pg=el('span','upg'),all=el('span','uall','All updates ›');
+pg.setAttribute('aria-hidden','true');
+strip.appendChild(dot);strip.appendChild(tick);strip.appendChild(pg);strip.appendChild(all);
+var tools=document.getElementById('tools');
+if(tools&&tools.parentNode)tools.parentNode.insertBefore(strip,tools);
+var items=[],pos=0,timer=null;
+function nameBit(e){var hs=e.hacks||[];return hs.length>1?hs.length+' guides':hs.length?hname(hs[0]):''}
+function buildStrip(){
+  tick.textContent='';pg.textContent='';items=[];pos=0;
+  var es=sorted().slice(0,3);
+  if(!es.length){strip.hidden=true;return}strip.hidden=false;
+  es.forEach(function(e,i){
+    var it=el('span','uitem'+(i?'':' on')),nm=nameBit(e),t=e.title||'Updated';
+    var k=nm&&t.toLowerCase().indexOf(nm.toLowerCase())>-1?t.toLowerCase().indexOf(nm.toLowerCase()):-1;
+    if(k>-1){it.appendChild(document.createTextNode(t.slice(0,k)));it.appendChild(el('b','',t.slice(k,k+nm.length)));
+      it.appendChild(document.createTextNode(t.slice(k+nm.length)))}
+    else{if(nm)it.appendChild(el('b','',nm));it.appendChild(document.createTextNode((nm?' ':'')+t))}
+    it.appendChild(el('span','um',' · '+fmtDate(e.date)));
+    tick.appendChild(it);items.push(it);pg.appendChild(el('i',i?'':'on'));
+  });
+  if(timer)clearInterval(timer);
+  if(items.length>1&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))
+    timer=setInterval(function(){if(strip.matches(':hover')||strip.contains(document.activeElement))return;step(1)},3600);
+}
+function step(d){
+  items[pos].classList.remove('on');pg.children[pos].classList.remove('on');
+  pos=(pos+d+items.length)%items.length;
+  items[pos].classList.add('on');pg.children[pos].classList.add('on');
+}
+strip.addEventListener('click',function(){openPanel(null)});
+strip.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(null)}});
+/* ---- panel ---- */
+var ov=el('div','uov');ov.hidden=true;
+var pan=el('div','upan');pan.setAttribute('role','dialog');pan.setAttribute('aria-modal','true');pan.setAttribute('aria-labelledby','uptt');
+var hd=el('div','uhd'),title=el('h2','','What’s new');title.id='uptt';
+var hr=el('div','uhr'),xb=el('button','ux','×');xb.type='button';xb.setAttribute('aria-label','Close');
+hd.appendChild(title);hd.appendChild(hr);
+var sub=el('div','usub'),list=el('ol','ulist');
+pan.appendChild(hd);pan.appendChild(sub);pan.appendChild(list);ov.appendChild(pan);document.body.appendChild(ov);
+var cur=null,opener=null,editForm=null,popOpen=false;
+function btn(c,t,f){var b=el('button',c,t);b.type='button';b.addEventListener('click',f);return b}
+function render(){
+  hr.textContent='';sub.textContent='';list.textContent='';
+  if(editor){hr.appendChild(el('span','uedtag','Editor'));
+    hr.appendChild(btn('unew','+ New update',function(){editForm={idx:-1,e:{date:today(),hacks:cur?[cur]:[],title:'',details:''}};render();list.scrollTop=0}))}
+  hr.appendChild(xb);
+  var es=sorted().filter(function(e){return!cur||(e.hacks||[]).indexOf(cur)>-1});
+  title.textContent=cur?'Updates: '+hname(cur):'What’s new';
+  if(cur)sub.appendChild(btn('ulink','Show all updates',function(){cur=null;render()}));
+  else sub.textContent='Recent changes to the guides, newest first. Tap an update for details.';
+  if(editor&&tokMsg){var m=el('div','uerr',tokMsg+' ');m.appendChild(btn('ulink','Sign out',signOut));sub.appendChild(m)}
+  if(editForm&&editForm.idx===-1)list.appendChild(formLi());
+  if(!es.length&&!editForm){var li=el('li','uempty','No updates logged yet.');list.appendChild(li)}
+  es.forEach(function(e){
+    if(editForm&&editForm.idx!==-1&&editForm.key===JSON.stringify(e)){list.appendChild(formLi());return}
+    var li=el('li','uli'),hs=e.hacks||[];
+    var many=hs.length>3,det=!!(e.details||many);
+    var box=el(det?'details':'div','uit');
+    var head=el(det?'summary':'div',det?'':'urow');
+    head.appendChild(el('span','ud',fmtDate(e.date)));head.appendChild(el('span','ut',e.title||'Updated'));
+    var hk=el('span','uhk');
+    if(many)hk.textContent=hs.length+' guides';
+    else hs.forEach(function(h){var s=el('span'),i=el('i');i.style.setProperty('--c',colors[h]||'#888');s.appendChild(i);s.appendChild(document.createTextNode(hname(h)));hk.appendChild(s)});
+    head.appendChild(hk);box.appendChild(head);
+    if(det){var txt=e.details||'';if(many)txt+=(txt?' ':'')+'Guides: '+hs.map(hname).join(', ')+'.';box.appendChild(el('div','udt',txt))}
+    li.appendChild(box);
+    if(editor){var ac=el('span','uact');
+      ac.appendChild(btn('uib','Edit',function(){editForm={idx:1,key:JSON.stringify(e),e:JSON.parse(JSON.stringify(e))};render()}));
+      var del=btn('uib uibx','Delete',function(){
+        if(del.dataset.arm!=='1'){del.dataset.arm='1';del.textContent='Confirm delete';setTimeout(function(){if(del.isConnected){del.dataset.arm='';del.textContent='Delete'}},4000);return}
+        del.disabled=true;var key=JSON.stringify(e);
+        commit(function(d){var k=d.entries.map(function(x){return JSON.stringify(x)}).indexOf(key);if(k>-1)d.entries.splice(k,1)},'Remove log entry: '+(e.title||''))
+          .then(function(){tokMsg='';render()}).catch(function(er){del.disabled=false;sub.appendChild(el('div','uerr','Could not delete: '+er.message))})});
+      ac.appendChild(del);li.appendChild(ac)}
+    list.appendChild(li);
+  });
+}
+/* ---- add / edit form ---- */
+function formLi(){
+  var f=editForm,li=el('li','uform'),sel=f.e.hacks.slice();
+  var lab=function(t){return el('label','uflab',t)};
+  li.appendChild(lab('Guides updated'));
+  var dd=el('div','udd'),dtop=el('button','uddb');dtop.type='button';
+  var pop=el('div','udpop');pop.hidden=true;
+  function sumTxt(){dtop.textContent='';
+    if(!sel.length)dtop.appendChild(el('span','uph','Choose guides…'));
+    else sel.slice(0,3).forEach(function(h){dtop.appendChild(el('span','uchip',hname(h)))});
+    if(sel.length>3)dtop.appendChild(el('span','uchip','+'+(sel.length-3)));
+    dtop.appendChild(el('span','uddc','▾'))}
+  function fill(){pop.textContent='';
+    var all=el('label','uopt'),ca=document.createElement('input');ca.type='checkbox';ca.checked=sel.length===cards.length;
+    ca.onchange=function(){sel=ca.checked?cards.map(cid):[];fill();sumTxt()};all.appendChild(ca);all.appendChild(document.createTextNode(' Select all'));pop.appendChild(all);
+    cards.map(cid).sort(function(a,b){return hname(a).localeCompare(hname(b))}).forEach(function(id){
+      var l=el('label','uopt'),c=document.createElement('input');c.type='checkbox';c.checked=sel.indexOf(id)>-1;
+      c.onchange=function(){var k=sel.indexOf(id);if(c.checked&&k<0)sel.push(id);if(!c.checked&&k>-1)sel.splice(k,1);ca.checked=sel.length===cards.length;sumTxt()};
+      l.appendChild(c);l.appendChild(document.createTextNode(' '+hname(id)));pop.appendChild(l)});
+    sel.forEach(function(id){if(!cname[id]){var l=el('label','uopt'),c=document.createElement('input');c.type='checkbox';c.checked=true;
+      c.onchange=function(){var k=sel.indexOf(id);if(c.checked&&k<0)sel.push(id);if(!c.checked&&k>-1)sel.splice(k,1);sumTxt()};
+      l.appendChild(c);l.appendChild(document.createTextNode(' '+hname(id)+' (no card)'));pop.appendChild(l)}})}
+  dtop.onclick=function(){pop.hidden=!pop.hidden;popOpen=!pop.hidden};
+  fill();sumTxt();dd.appendChild(dtop);dd.appendChild(pop);li.appendChild(dd);
+  li.appendChild(lab('Date'));var di=document.createElement('input');di.type='date';di.className='ufi';di.value=f.e.date;li.appendChild(di);
+  li.appendChild(lab('Short title'));var ti=document.createElement('input');ti.type='text';ti.className='ufi';ti.maxLength=90;ti.value=f.e.title||'';ti.placeholder='e.g. Updated for v2.1';li.appendChild(ti);
+  li.appendChild(lab('Details (optional, shown when someone taps the entry)'));var de=document.createElement('textarea');de.className='ufi';de.value=f.e.details||'';li.appendChild(de);
+  var msg=el('div','uerr');var bs=el('div','ubtns');
+  bs.appendChild(btn('uib','Cancel',function(){editForm=null;popOpen=false;render()}));
+  var pub=btn('uib upri',f.idx===-1?'Publish':'Save changes',function(){
+    msg.textContent='';
+    if(!sel.length){msg.textContent='Choose at least one guide.';return}
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(di.value)){msg.textContent='Pick a date.';return}
+    if(!ti.value.trim()){msg.textContent='Add a short title.';return}
+    var ne={date:di.value,hacks:sel.slice(),title:ti.value.trim()};if(de.value.trim())ne.details=de.value.trim();
+    pub.disabled=true;msg.textContent='Publishing…';
+    commit(function(d){
+      sel.forEach(function(id){if(!d.hacks.some(function(h){return h.id===id}))d.hacks.push({id:id,name:hname(id)})});
+      if(f.idx===-1)d.entries.unshift(ne);
+      else{var k=d.entries.map(function(x){return JSON.stringify(x)}).indexOf(f.key);if(k>-1)d.entries[k]=ne;else d.entries.unshift(ne)}
+    },(f.idx===-1?'Log update: ':'Edit log entry: ')+ne.title).then(function(){editForm=null;popOpen=false;tokMsg='';render()})
+      .catch(function(er){pub.disabled=false;msg.textContent='Could not publish: '+er.message})});
+  bs.appendChild(pub);li.appendChild(msg);li.appendChild(bs);return li;
+}
+function openPanel(id){cur=id||null;opener=document.activeElement;editForm=null;render();ov.hidden=false;html.classList.add('uopen');list.scrollTop=0;xb.focus();verify()}
+function closePanel(){ov.hidden=true;html.classList.remove('uopen');if(opener&&opener.focus)try{opener.focus()}catch(e){}}
+xb.addEventListener('click',closePanel);
+ov.addEventListener('mousedown',function(e){if(e.target===ov&&!editForm)closePanel()});
+ov.addEventListener('mousedown',function(e){if(popOpen&&!e.target.closest('.udd')){[].forEach.call(ov.querySelectorAll('.udpop'),function(p){p.hidden=true});popOpen=false}});
+document.addEventListener('keydown',function(e){
+  if(ov.hidden)return;
+  if(e.key==='Escape'){e.preventDefault();e.stopPropagation();
+    if(popOpen){[].forEach.call(ov.querySelectorAll('.udpop'),function(p){p.hidden=true});popOpen=false;return}
+    closePanel();return}
+  if(e.key==='Tab'){var f=[].slice.call(pan.querySelectorAll('button,summary,input,textarea,select,[tabindex="0"]')).filter(function(n){return n.offsetParent!==null&&!n.disabled});
+    if(!f.length)return;var a=f[0],z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+},true);
+paint();buildStrip();
+if(editor)render();
+/* ---- newer log from the repo, when the page is served over http(s) ---- */
+if(/^https?:/.test(location.protocol)&&window.fetch){
+  fetch('updates.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){
+    if(valid(j)){data=j;paint();buildStrip();if(!ov.hidden&&!editForm)render()}}).catch(function(){});
+}
+}catch(err){if(window.console)console.error(err)}
 })();
 </script>
 </body>

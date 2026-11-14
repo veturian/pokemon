@@ -43,9 +43,21 @@
   {
    "id": "phoenix-red",
    "name": "Phoenix Red"
+  },
+  {
+   "id": "silver-mirror",
+   "name": "Silver Mirror"
   }
  ],
  "entries": [
+  {
+   "date": "2026-11-13",
+   "hacks": [
+    "silver-mirror"
+   ],
+   "title": "Silver Mirror added",
+   "details": "New guide with the Pokédex, Wild Encounters and Items tabs."
+  },
   {
    "date": "2026-11-13",
    "hacks": [

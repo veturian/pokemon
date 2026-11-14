@@ -51,6 +51,14 @@
  ],
  "entries": [
   {
+   "date": "2026-11-14",
+   "hacks": [
+    "silver-mirror"
+   ],
+   "title": "Correct several shiny palettes.",
+   "details": "Fixed several shiny palettes that had been unintentionally swapped with regular ones. Toggling to shiny should be correct now for all mons."
+  },
+  {
    "date": "2026-11-13",
    "hacks": [
     "silver-mirror"

@@ -53,6 +53,13 @@
   {
    "date": "2026-11-14",
    "hacks": [],
+   "title": "Small tweaks to header/update banner",
+   "site": true,
+   "details": "Added option for site updates directly, not tied to a ROM. Reformatted banners for slimness and reduced interference with main page functions."
+  },
+  {
+   "date": "2026-11-14",
+   "hacks": [],
    "title": "Added 'Follow my Progress' option to main page.",
    "site": true,
    "details": "Added banner for linking to my ROMLog, where I track all ROMs I've played."

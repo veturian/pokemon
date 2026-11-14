@@ -5,7 +5,7 @@ Searchable reference guides for Pokémon ROM hacks, built to look things up whil
 ## What's here
 
 - **The hub** – a card for every hack, with search by name, base game or feature, sorting, card and list layouts, filter chips, a random-hack button, and light and dark modes.
-- **One guide per hack** – each hack has its own page. Most have a **Pokédex** tab and a **Wild Encounters** tab; Emerald Adventure currently covers Wild Encounters.
+- **One guide per hack** – each hack has its own page. Most have **Pokédex**, **Wild Encounters** and **Items** tabs. Elysium currently has Pokédex and Wild Encounters, and Emerald Adventure covers Wild Encounters.
 
 ## Hacks covered
 

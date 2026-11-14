@@ -1,0 +1,202 @@
+{
+ "hacks": [
+  {
+   "id": "emerald-adventure",
+   "name": "Emerald Adventure"
+  },
+  {
+   "id": "rowe",
+   "name": "R.O.W.E."
+  },
+  {
+   "id": "classic",
+   "name": "Classic"
+  },
+  {
+   "id": "ceruleum",
+   "name": "Ceruleum"
+  },
+  {
+   "id": "bills-secret-garden-dx",
+   "name": "Bill's Secret Garden DX"
+  },
+  {
+   "id": "crestfall",
+   "name": "Crestfall"
+  },
+  {
+   "id": "elysium",
+   "name": "Elysium"
+  },
+  {
+   "id": "crystal-inheritance",
+   "name": "Crystal Inheritance"
+  },
+  {
+   "id": "riverteal",
+   "name": "RiverTeal"
+  },
+  {
+   "id": "brisk-emerald",
+   "name": "Brisk Emerald"
+  },
+  {
+   "id": "phoenix-red",
+   "name": "Phoenix Red"
+  }
+ ],
+ "entries": [
+  {
+   "date": "2026-11-13",
+   "hacks": [
+    "phoenix-red"
+   ],
+   "title": "Phoenix Red added",
+   "details": "New guide with the Pokédex, Wild Encounters and Items tabs."
+  },
+  {
+   "date": "2026-11-11",
+   "hacks": [
+    "crestfall"
+   ],
+   "title": "Updated for Crestfall 2.0",
+   "details": "Keldeo is now listed as roaming. Added the Tera Orb, Bottle Caps, Auspicious and Malicious Armor and the type Tera Shards to the Items tab, plus a second Master Ball source. Added a Join the Discord button."
+  },
+  {
+   "date": "2026-11-11",
+   "hacks": [
+    "riverteal"
+   ],
+   "title": "Discord invite link updated",
+   "details": "The Riverteal Discord button now uses a permanent invite link."
+  },
+  {
+   "date": "2026-11-09",
+   "hacks": [
+    "emerald-adventure",
+    "rowe",
+    "classic",
+    "ceruleum",
+    "bills-secret-garden-dx",
+    "crestfall",
+    "elysium",
+    "crystal-inheritance",
+    "riverteal",
+    "brisk-emerald"
+   ],
+   "title": "Privacy-friendly visit counter added",
+   "details": "Added an anonymous visit counter (GoatCounter) to every guide. Nothing about the guides' content changed."
+  },
+  {
+   "date": "2026-11-08",
+   "hacks": [
+    "rowe"
+   ],
+   "title": "Items tab added; guide rebuilt for v2.1.9.1 Experimental",
+   "details": "Pokédex, Wild Encounters and the new Items tab now match the current Experimental build."
+  },
+  {
+   "date": "2026-11-08",
+   "hacks": [
+    "riverteal"
+   ],
+   "title": "White Flute and Soul Dew added; areas reordered",
+   "details": "Added White Flute (Grindel City) and Soul Dew (held by Latias and Latios). Wild Encounters areas now follow the story order from Route 310 onward."
+  },
+  {
+   "date": "2026-11-07",
+   "hacks": [
+    "bills-secret-garden-dx",
+    "brisk-emerald",
+    "ceruleum",
+    "classic",
+    "crestfall",
+    "crystal-inheritance"
+   ],
+   "title": "Items tab added",
+   "details": "Every item with a confirmed location, with where to get it and shop prices. TMs and HMs show the move they teach. Crestfall was also checked against ROM v1.2.5 and Classic was rebuilt on the current layout."
+  },
+  {
+   "date": "2026-11-07",
+   "hacks": [
+    "riverteal"
+   ],
+   "title": "Updated for the creator's latest release",
+   "details": "Pokédex, moves, encounters and items updated for the new version. The water route label now reads River route."
+  },
+  {
+   "date": "2026-11-05",
+   "hacks": [
+    "riverteal"
+   ],
+   "title": "Areas updated at the creator's request",
+   "details": "Removed seven areas that are not in the game. Routes 303 and 314 are listed again with No wild encounters."
+  },
+  {
+   "date": "2026-11-02",
+   "hacks": [
+    "riverteal"
+   ],
+   "title": "Items tab added; fishing and route order corrected",
+   "details": "Added the Items tab. Fishing now uses the hack's single Rod, and the first areas follow the order you reach them."
+  },
+  {
+   "date": "2026-11-01",
+   "hacks": [
+    "brisk-emerald"
+   ],
+   "title": "Fixed a malformed Mega name",
+   "details": "One Mega Dragonite entry showed a doubled letter in its name."
+  },
+  {
+   "date": "2026-10-31",
+   "hacks": [
+    "riverteal",
+    "brisk-emerald"
+   ],
+   "title": "RiverTeal and Brisk Emerald added",
+   "details": "New guides with the Pokédex and Wild Encounters tabs."
+  },
+  {
+   "date": "2026-10-30",
+   "hacks": [
+    "crystal-inheritance"
+   ],
+   "title": "Crystal Inheritance added",
+   "details": "New guide with the Pokédex and Wild Encounters tabs."
+  },
+  {
+   "date": "2026-10-29",
+   "hacks": [
+    "elysium"
+   ],
+   "title": "Elysium added",
+   "details": "New guide with the Pokédex and Wild Encounters tabs, covering both parts of the game."
+  },
+  {
+   "date": "2026-10-29",
+   "hacks": [
+    "rowe"
+   ],
+   "title": "Pokédex tab added",
+   "details": "Full Pokédex with stats, moves, evolutions and where to find each Pokémon."
+  },
+  {
+   "date": "2026-10-28",
+   "hacks": [
+    "crestfall",
+    "bills-secret-garden-dx"
+   ],
+   "title": "Crestfall and Bill's Secret Garden DX added",
+   "details": "New guides with the Pokédex and Wild Encounters tabs."
+  },
+  {
+   "date": "2026-10-27",
+   "hacks": [
+    "ceruleum"
+   ],
+   "title": "Ceruleum added",
+   "details": "New guide with the Pokédex and Wild Encounters tabs."
+  }
+ ]
+}

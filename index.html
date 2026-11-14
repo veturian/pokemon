@@ -271,6 +271,15 @@ textarea.ufi{min-height:76px;resize:vertical}
 @media (max-width:600px){.uact{position:static;padding:0 8px 8px}}
 .ustrip{text-align:left}
 .ustrip{box-sizing:border-box;width:100%;max-width:1040px;margin-left:auto;margin-right:auto}
+.rlstrip{display:flex;align-items:center;gap:12px;margin:0 0 12px;padding:7px 14px;border:1px solid var(--ctl);border-radius:12px;background:var(--card);color:var(--ink);font-size:.92rem;min-height:38px;text-decoration:none;text-align:left}
+.rlstrip:hover{background:var(--hover)}
+.rlstrip:focus-visible{outline:3px solid #2f6db5;outline-offset:2px}
+.rlstrip>svg{flex:none;color:#2f6db5}
+.rlstrip .rlt{flex:1;min-width:0;color:var(--muted)}
+.rlstrip .rlgo{flex:none;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:#2f6db5;white-space:nowrap}
+html[data-theme=dark] .rlstrip>svg,html[data-theme=dark] .rlstrip .rlgo{color:#78adea}
+.rlstrip:hover .rlgo{gap:9px}
+@media (max-width:520px){.rlstrip .rlt{display:none}.rlstrip{justify-content:center}.rlstrip>svg{display:none}}
 </style>
 <script data-goatcounter="https://veturian.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -287,6 +296,7 @@ textarea.ufi{min-height:76px;resize:vertical}
     </div>
   </header>
   <section id="tools" role="search" aria-label="Find a hack" hidden>
+    <a class="rlstrip" href="https://veturian.github.io/romlog" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="rlt">See which hacks I'm playing and how far I've gotten.</span><span class="rlgo">Follow my progress <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     <div class="tbar">
       <div class="sbox">
         <svg class="mag" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>

@@ -55,7 +55,8 @@
    "hacks": [
     "silver-mirror"
    ],
-   "title": "Added wild held item chances to the Pokédex entries and the Items tab."
+   "title": "Added wild held items.",
+   "details": "Added wild held item chances to the Pokédex entries and the Items tab."
   },
   {
    "date": "2026-11-14",

@@ -56,7 +56,7 @@
     "emerald-adventure"
    ],
    "title": "Added full dex, items, and wild held items",
-   "details": "Pokédex and Items tabs added. Every Pokémon now has full stats, moves and evolutions, plus the wild held items it carries, and every item shows where to find it."
+   "details": "Pokédex and Items tabs added. Every Pokémon now has full stats, moves and evolutions, plus the wild held items it carries, and every item shows where to find it. Corrected a few existing item locations and updated Game Corner prizes."
   },
   {
    "date": "2026-11-14",

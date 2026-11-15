@@ -56,7 +56,7 @@
     "silver-mirror"
    ],
    "title": "Item locations & encounter updates",
-   "details": "Corrected several items showing inaccurate locations; changed a few to be more specific to be easier to find. Updated Olivine & Vermillion encounter tables to separate city vs port tables."
+   "details": "Corrected several items showing inaccurate locations; changed a few to be more specific to be easier to find. Updated Olivine & Vermillion encounter tables to separate city vs port tables. Added the Goldenrod Dept Store rooftop sale to the Items tab, with sale prices, for items before and after the Hall of Fame. Rainbow Wing now has a new Event tag and a clearer location note."
   },
   {
    "date": "2026-11-15",

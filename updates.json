@@ -53,6 +53,14 @@
   {
    "date": "2026-11-14",
    "hacks": [
+    "riverteal"
+   ],
+   "title": "Added wild held items.",
+   "details": "Added wild held item chances to the Pokédex entries and the Items tab."
+  },
+  {
+   "date": "2026-11-14",
+   "hacks": [
     "silver-mirror"
    ],
    "title": "Added wild held items.",

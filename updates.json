@@ -53,6 +53,14 @@
   {
    "date": "2026-11-15",
    "hacks": [
+    "phoenix-red"
+   ],
+   "title": "Added wild held items.",
+   "details": "Added wild held items to Pokédex entries and item pages"
+  },
+  {
+   "date": "2026-11-15",
+   "hacks": [
     "silver-mirror"
    ],
    "title": "Updated encounters",

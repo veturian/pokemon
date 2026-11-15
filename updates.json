@@ -53,6 +53,14 @@
   {
    "date": "2026-11-15",
    "hacks": [
+    "silver-mirror"
+   ],
+   "title": "Updated encounters",
+   "details": "Split Vermillion into separate city & port encounter tables."
+  },
+  {
+   "date": "2026-11-15",
+   "hacks": [
     "emerald-adventure"
    ],
    "title": "Added full dex, items, and wild held items",

@@ -56,7 +56,7 @@
     "riverteal"
    ],
    "title": "Added wild held items.",
-   "details": "Added wild held item chances to the Pokédex entries and the Items tab."
+   "details": "Pokédex entries now show which items wild Pokémon can hold and the chance, and each item’s page lists its holders; 25 held items were added to the Items tab."
   },
   {
    "date": "2026-11-14",

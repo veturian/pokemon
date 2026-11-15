@@ -55,6 +55,13 @@
    "hacks": [
     "silver-mirror"
    ],
+   "title": "Added wild held item chances to the Pokédex entries and the Items tab."
+  },
+  {
+   "date": "2026-11-14",
+   "hacks": [
+    "silver-mirror"
+   ],
    "title": "Item, TM, and Encounter updates.",
    "details": "Added Exp. Share, TMs and pager upgrades, updated wild encounter levels, added Apricorn Balls details, and fixed Sun Stone and Dusk Stone locations."
   },

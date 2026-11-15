@@ -53,6 +53,14 @@
   {
    "date": "2026-11-15",
    "hacks": [
+    "silver-mirror"
+   ],
+   "title": "Item locations & encounter updates",
+   "details": "Corrected several items showing inaccurate locations; changed a few to be more specific to be easier to find. Updated Olivine & Vermillion encounter tables to separate city vs port tables."
+  },
+  {
+   "date": "2026-11-15",
+   "hacks": [
     "phoenix-red"
    ],
    "title": "Added wild held items.",

@@ -53,6 +53,14 @@
   {
    "date": "2026-11-14",
    "hacks": [
+    "rowe"
+   ],
+   "title": "Added wild held items",
+   "details": "Added wild held items to the Pokédex and Items tabs, with each Pokémon’s exact chance, and 23 newly listed items."
+  },
+  {
+   "date": "2026-11-14",
+   "hacks": [
     "riverteal"
    ],
    "title": "Added wild held items.",

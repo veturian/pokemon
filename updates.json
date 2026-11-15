@@ -55,6 +55,14 @@
    "hacks": [
     "silver-mirror"
    ],
+   "title": "Item notes, Rock Smash encounters & legendary respawns",
+   "details": "Added the missing Rock Smash encounters to the Wild Encounters tab and a respawn note to the legendary Pokémon. Added key item updates plus clearer notes for the Ice Beam, Thunderbolt, Flamethrower and Berserk Gene pickups."
+  },
+  {
+   "date": "2026-11-15",
+   "hacks": [
+    "silver-mirror"
+   ],
    "title": "Item locations & encounter updates",
    "details": "Corrected several items showing inaccurate locations; changed a few to be more specific to be easier to find. Updated Olivine & Vermillion encounter tables to separate city vs port tables. Added the Goldenrod Dept Store rooftop sale to the Items tab, with sale prices, for items before and after the Hall of Fame. Rainbow Wing now has a new Event tag and a clearer location note."
   },

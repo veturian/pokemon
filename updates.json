@@ -162,19 +162,9 @@
   },
   {
    "date": "2026-11-09",
-   "hacks": [
-    "emerald-adventure",
-    "rowe",
-    "classic",
-    "ceruleum",
-    "bills-secret-garden-dx",
-    "crestfall",
-    "elysium",
-    "crystal-inheritance",
-    "riverteal",
-    "brisk-emerald"
-   ],
+   "hacks": [],
    "title": "Privacy-friendly visit counter added",
+   "site": true,
    "details": "Added an anonymous visit counter (GoatCounter) to every guide. Nothing about the guides' content changed."
   },
   {

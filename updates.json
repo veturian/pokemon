@@ -53,6 +53,14 @@
   {
    "date": "2026-11-14",
    "hacks": [
+    "crestfall"
+   ],
+   "title": "Added wild held items; small other updates",
+   "details": "Added wild held-item chances to the Pokédex and Items tabs. Added new items and replaced placeholder item icons with the game’s own icons. Reordered Mega Stones alphabetically."
+  },
+  {
+   "date": "2026-11-14",
+   "hacks": [
     "rowe"
    ],
    "title": "Added wild held items",

@@ -55,6 +55,14 @@
    "hacks": [
     "silver-mirror"
    ],
+   "title": "Items sorted alphabetically",
+   "details": "Items are now listed alphabetically within each category (TMs & HMs stay in number order). Shortened the Rainbow Wing location note."
+  },
+  {
+   "date": "2026-11-15",
+   "hacks": [
+    "silver-mirror"
+   ],
    "title": "Item notes, Rock Smash encounters & legendary respawns",
    "details": "Added the missing Rock Smash encounters to the Wild Encounters tab and a respawn note to the legendary Pokémon. Added key item updates plus clearer notes for the Ice Beam, Thunderbolt, Flamethrower and Berserk Gene pickups."
   },

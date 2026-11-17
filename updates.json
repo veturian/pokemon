@@ -51,6 +51,13 @@
  ],
  "entries": [
   {
+   "date": "2026-11-16",
+   "hacks": [],
+   "title": "Mobile homepage upgrades",
+   "site": true,
+   "details": "Filters now open in a bottom sheet on phones so the hack cards show sooner, and the What's new panel is easier to read and close, with the overlapping text fixed."
+  },
+  {
    "date": "2026-11-15",
    "hacks": [
     "silver-mirror"

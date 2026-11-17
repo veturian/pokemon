@@ -55,7 +55,7 @@
    "hacks": [],
    "title": "Mobile homepage upgrades",
    "site": true,
-   "details": "Filters now open in a bottom sheet on phones so the hack cards show sooner, and the What's new panel is easier to read and close, with the overlapping text fixed."
+   "details": "Filters now open in a bottom sheet on phones so the hack cards show sooner, and the What's new panel is easier to read and close, with the overlapping text fixed. Formatting of the filters changes based on width of viewing screen, so rotating your phone will bring back normal filters; shrinking your desktop browser window will revert to mobile collapsed drawer view."
   },
   {
    "date": "2026-11-15",

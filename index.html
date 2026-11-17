@@ -314,6 +314,70 @@ html[data-theme=dark] .upill{background:#2b3a52;color:#9fc4f0}
 .uswl input:checked{background:#2f6db5}
 .uswl input:checked::after{transform:translateX(16px)}
 .uswl input:focus-visible{outline:3px solid #2f6db5;outline-offset:2px}
+
+/* ===== Mobile upgrades: filters bottom sheet and What's new sheet (phones only) ===== */
+.fsb,.fs,.fsbtn,#fsum{display:none}
+
+@media (max-width:600px){
+/* ---- shared by option 1 and 2: compact top row ---- */
+.sel .flab{display:none}
+#tools{margin-bottom:18px}
+.tbar{gap:8px}
+.sbox{flex:1 1 100%}
+.seg button,#rnd{font-size:0;padding:0;width:46px;justify-content:center}
+#vgrid::before{content:"\25A6";font-size:1.15rem}
+#vlist::before{content:"\2630";font-size:1.15rem}
+#rnd::before{content:"\1F3B2";font-size:1.2rem}
+
+
+/* ---- option 1: filters live in a bottom sheet ---- */
+.frow{display:none}
+.fsbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0}
+.fsbtn .bd{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--ink);color:var(--card);font-size:.75rem;line-height:20px;text-align:center}
+.fsbtn .bd:empty{display:none}
+#fsum{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+#fsum:empty{display:none}
+#fsum button{height:32px;padding:0 10px 0 12px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:var(--card);font:inherit;font-weight:700;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.stat{margin-top:10px}
+.fsb{display:block;position:fixed;inset:0;z-index:70;background:rgba(10,12,16,.55);opacity:0;pointer-events:none;transition:opacity .2s}
+.fs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:71;max-height:86vh;max-height:86dvh;flex-direction:column;background:var(--card);color:var(--ink);border:1px solid var(--edge);border-bottom:0;border-radius:20px 20px 0 0;box-shadow:0 -12px 40px rgba(0,0,0,.4);text-align:left;transform:translateY(105%);transition:transform .25s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+html.fsopen .fsb{opacity:1;pointer-events:auto}
+html.fsopen .fs{transform:none;visibility:visible}
+html.fsopen{overflow:hidden}
+.fs .gr{width:40px;height:5px;border-radius:3px;background:var(--ctl);margin:8px auto 0;flex:none}
+.fs .fh{flex:none;display:flex;align-items:center;justify-content:space-between;padding:10px 16px 6px}
+.fs .fh h2{margin:0;font-size:1.2rem}
+.fs .fx{width:44px;height:44px;border:1px solid var(--ctl);border-radius:12px;background:var(--card);color:var(--ink);font-size:1.5rem;line-height:1}
+.fs .fbody{flex:1;overflow:auto;padding:4px 16px 12px;display:grid;gap:18px}
+.fs .fbody .sel{display:grid;gap:6px}
+.fs .fbody .sel .flab{display:block}
+.fs .fbody select{width:100%;height:48px}
+.fs .fbody #chips{display:grid;gap:18px}
+.fs .fgrp{display:flex;flex-wrap:wrap;gap:8px}
+.fs .fgrp .flab{flex:0 0 100%;margin:0}
+.fs .fchip{height:44px;padding:0 16px;font-size:.95rem}
+.fs .fchip.gn{flex:1 0 calc(20% - 8px);width:auto;padding:0}
+.fs .ff{flex:none;display:flex;gap:10px;padding:12px 16px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--card)}
+.fs .ff .clr-all{height:48px;flex:none}
+.fs .show{flex:1;height:48px;border:0;border-radius:12px;background:var(--ink);color:var(--card);font:inherit;font-weight:800;font-size:1rem}
+
+/* ---- option 3: What's new as a full-width bottom sheet ---- */
+.uov{align-items:flex-end;padding:0}
+.upan{width:100%;max-height:92vh;max-height:92dvh;border-radius:20px 20px 0 0;border-bottom:0}
+.uhd::before{content:"";position:absolute;left:50%;top:8px;width:40px;height:5px;margin-left:-20px;border-radius:3px;background:var(--ctl)}
+.upan{position:relative}
+.uhd{flex:none;padding:22px 16px 6px 18px}
+.usub{flex:none;padding:0 18px 10px;min-height:0}
+.ux{width:44px;height:44px;border-radius:12px}
+.ulist{padding:0 10px calc(14px + env(safe-area-inset-bottom))}
+.uit>summary,.uit>.urow{grid-template-columns:auto 1fr;grid-template-areas:"d hk" "t t";gap:3px 10px;padding:11px 0;align-items:center}
+.ud{grid-area:d;font-size:.82rem}
+.uhk{grid-area:hk;grid-column:auto;justify-self:start}
+.ut{grid-area:t;font-size:1rem;line-height:1.3}
+}
+/* the shrinking-subtitle bug: header and subtitle must never squash when the list is tall */
+.uhd,.usub{flex:none}
+
 </style>
 <script data-goatcounter="https://veturian.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -943,6 +1007,58 @@ if(/^https?:/.test(location.protocol)&&window.fetch){
     if(valid(j)){data=j;paint();buildStrip();if(!ov.hidden&&!editForm)render()}}).catch(function(){});
 }
 }catch(err){if(window.console)console.error(err)}
+})();
+</script>
+
+<script>
+/* Mobile filters sheet (phones only) */
+(function(){
+var h=document.documentElement,mq=matchMedia('(max-width:600px)');
+function $(i){return document.getElementById(i)}
+var tools=$('tools');if(!tools)return;
+var tbar=tools.querySelector('.tbar'),sel=tools.querySelector('.sel'),chips=$('chips'),clear=$('clear'),seg=tools.querySelector('.seg');
+if(!tbar||!sel||!chips||!clear||!seg||!$('count'))return;
+var fsb=document.createElement('div');fsb.className='fsb';
+var fs=document.createElement('div');fs.className='fs';fs.setAttribute('role','dialog');fs.setAttribute('aria-modal','true');fs.setAttribute('aria-label','Filters');
+fs.innerHTML='<div class="gr"></div><div class="fh"><h2>Filters</h2><button type="button" class="fx" aria-label="Close">×</button></div><div class="fbody"></div><div class="ff"><button type="button" class="show"></button></div>';
+document.body.appendChild(fsb);document.body.appendChild(fs);
+var fbody=fs.querySelector('.fbody'),ff=fs.querySelector('.ff'),show=fs.querySelector('.show'),fx=fs.querySelector('.fx');
+var fbtn=document.createElement('button');fbtn.type='button';fbtn.className='ctl fsbtn';fbtn.innerHTML='☰ Filters <span class="bd"></span>';
+var fsum=document.createElement('div');fsum.id='fsum';
+tbar.insertBefore(fbtn,sel);tbar.appendChild(fsum);
+var home={sel:[sel.parentNode,sel.nextSibling],chips:[chips.parentNode,chips.nextSibling],clear:[clear.parentNode,clear.nextSibling]};
+function place(){
+  if(mq.matches){if(sel.parentNode!==fbody){fbody.appendChild(sel);fbody.appendChild(chips);ff.insertBefore(clear,show)}tbar.insertBefore(fbtn,seg)}
+  else{if(sel.parentNode===fbody){home.sel[0].insertBefore(sel,home.sel[1]);home.chips[0].insertBefore(chips,home.chips[1]);home.clear[0].insertBefore(clear,home.clear[1])}
+    closeSheet()}
+  sync();
+}
+function openSheet(){h.classList.add('fsopen')}
+function closeSheet(){h.classList.remove('fsopen')}
+fbtn.addEventListener('click',openSheet);fx.addEventListener('click',closeSheet);fsb.addEventListener('click',closeSheet);show.addEventListener('click',closeSheet);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet()});
+var ty=null;fs.addEventListener('touchstart',function(e){if(e.target.closest('.fbody')&&fbody.scrollTop>0)return;ty=e.touches[0].clientY},{passive:true});
+fs.addEventListener('touchend',function(e){if(ty!=null&&e.changedTouches[0].clientY-ty>70)closeSheet();ty=null});
+function sync(){
+  var on=[].slice.call(chips.querySelectorAll('.fchip[aria-pressed=true]'));
+  fbtn.querySelector('.bd').textContent=on.length||'';
+  fsum.textContent='';
+  on.forEach(function(c){var x=document.createElement('button');x.type='button';
+    x.innerHTML=(c.dataset.g==='gen'?'Gen ':'')+c.dataset.v+' <span aria-hidden="true">×</span>';x.setAttribute('aria-label','Remove filter '+c.dataset.v);
+    x.addEventListener('click',function(){c.click()});fsum.appendChild(x)});
+  var ct=$('count').textContent||'';
+  if(/^Random pick/.test(ct)){var rp=document.createElement('button');rp.type='button';rp.innerHTML='\ud83c\udfb2 Random pick <span aria-hidden="true">\u00d7</span>';rp.setAttribute('aria-label','Remove random pick and show all hacks');
+    rp.addEventListener('click',function(){clear.click()});fsum.insertBefore(rp,fsum.firstChild)}
+  var m=/(\d+) of (\d+)/.exec(ct);
+  show.textContent=m?'Show '+m[1]+(m[1]==='1'?' hack':' hacks'):'Show hacks';
+}
+new MutationObserver(sync).observe($('count'),{childList:true,characterData:true,subtree:true});
+if(mq.addEventListener)mq.addEventListener('change',place);else mq.addListener(place);
+place();
+/* What's new sheet: swipe down on the header to close (phones) */
+var sy=null;
+document.addEventListener('touchstart',function(e){var t=e.target.closest&&e.target.closest('.uhd');sy=t&&mq.matches?e.touches[0].clientY:null},{passive:true});
+document.addEventListener('touchend',function(e){if(sy!=null&&e.changedTouches[0].clientY-sy>60){var x=document.querySelector('.uov .ux');if(x)x.click()}sy=null});
 })();
 </script>
 </body>

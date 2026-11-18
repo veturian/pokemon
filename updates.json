@@ -51,6 +51,14 @@
  ],
  "entries": [
   {
+   "date": "2026-11-17",
+   "hacks": [
+    "riverteal"
+   ],
+   "title": "Added Info tab with mobile optimization",
+   "details": "Added full info tab with additional references, notes from the dev, maps, etc. Optimized that page for better mobile view on smaller screens."
+  },
+  {
    "date": "2026-11-16",
    "hacks": [],
    "title": "Mobile homepage upgrades",

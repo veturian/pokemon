@@ -53,6 +53,23 @@
   {
    "date": "2026-11-22",
    "hacks": [
+    "bills-secret-garden-dx",
+    "brisk-emerald",
+    "ceruleum",
+    "crestfall",
+    "crystal-inheritance",
+    "emerald-adventure",
+    "phoenix-red",
+    "rowe",
+    "riverteal",
+    "silver-mirror"
+   ],
+   "title": "Added versioning indicators",
+   "details": "Small pill at the top of each page shows which version the data is based on. Should help with confusion around things changing as updates release and I try to keep up with them."
+  },
+  {
+   "date": "2026-11-22",
+   "hacks": [
     "crestfall"
    ],
    "title": "Updated for v2.1.0",

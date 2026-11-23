@@ -51,6 +51,14 @@
  ],
  "entries": [
   {
+   "date": "2026-11-22",
+   "hacks": [
+    "crestfall"
+   ],
+   "title": "Updated for v2.1.0",
+   "details": "Corrected six evolution methods, updated four evolution item descriptions, and added the Battle Crucible prizes and Shiny Candy to the Items tab."
+  },
+  {
    "date": "2026-11-20",
    "hacks": [
     "silver-mirror"

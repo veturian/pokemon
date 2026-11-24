@@ -53,6 +53,14 @@
   {
    "date": "2026-11-23",
    "hacks": [
+    "riverteal"
+   ],
+   "title": "Corrected one encounter table",
+   "details": "Corrected one encounter table from cave to land to be less misleading."
+  },
+  {
+   "date": "2026-11-23",
+   "hacks": [
     "crestfall"
    ],
    "title": "Added Aerodactylite"

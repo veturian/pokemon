@@ -47,9 +47,20 @@
   {
    "id": "silver-mirror",
    "name": "Silver Mirror"
+  },
+  {
+   "id": "aesthetic-red",
+   "name": "Aesthetic Red"
   }
  ],
  "entries": [
+  {
+   "date": "2026-11-24",
+   "hacks": [
+    "aesthetic-red"
+   ],
+   "title": "Added Aesthetic Red"
+  },
   {
    "date": "2026-11-23",
    "hacks": [

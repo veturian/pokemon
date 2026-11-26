@@ -51,9 +51,20 @@
   {
    "id": "aesthetic-red",
    "name": "Aesthetic Red"
+  },
+  {
+   "id": "mystic-crystal",
+   "name": "Mystic Crystal"
   }
  ],
  "entries": [
+  {
+   "date": "2026-11-25",
+   "hacks": [
+    "mystic-crystal"
+   ],
+   "title": "Added Mystic Crystal"
+  },
   {
    "date": "2026-11-24",
    "hacks": [

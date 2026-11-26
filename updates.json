@@ -61,6 +61,14 @@
   {
    "date": "2026-11-25",
    "hacks": [
+    "silver-mirror"
+   ],
+   "title": "Updated to v1.2.2",
+   "details": "Updated TM compatibility and various movesets."
+  },
+  {
+   "date": "2026-11-25",
+   "hacks": [
     "mystic-crystal"
    ],
    "title": "Corrected overflow encounter data in dex entries",

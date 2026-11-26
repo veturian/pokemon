@@ -63,6 +63,14 @@
    "hacks": [
     "mystic-crystal"
    ],
+   "title": "Corrected overflow encounter data in dex entries",
+   "details": "Some dex entries had all day part encounters listed under Day instead of broken out appropriately. These are fixed."
+  },
+  {
+   "date": "2026-11-25",
+   "hacks": [
+    "mystic-crystal"
+   ],
    "title": "Added Mystic Crystal"
   },
   {

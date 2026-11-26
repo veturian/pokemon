@@ -59,6 +59,14 @@
  ],
  "entries": [
   {
+   "date": "2026-11-26",
+   "hacks": [
+    "mystic-crystal"
+   ],
+   "title": "Added Atlas tab",
+   "details": "Added an interactive map of Johto and Kanto with wild encounters, items, trainers and connections for every route, town, cave and forest."
+  },
+  {
    "date": "2026-11-25",
    "hacks": [
     "silver-mirror"

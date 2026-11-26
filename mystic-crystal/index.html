@@ -742,13 +742,13 @@ function whereHtml(c){
   const w=WILD[c.k]||[];let h='';
   const cell=x=>x==null?'<span class="dim">Not listed</span>':x.fish?x.fish.map(([rod,p,l])=>`<div><span class="rod ${rodCls[rod]}">${rod}</span> ${p}% (${l})</div>`).join(''):x.map(([p,l])=>`<div>${p}% (${l})</div>`).join('');
   if(w.length){
-    h+='<div class="scroll"><table>'+(NODN?'<tr><th>Area</th><th>Method</th><th>Chance</th></tr>':'<tr><th>Area</th><th>Method</th><th>Day</th><th>Night</th></tr>')+w.map(e=>{
+    h+='<div class="scroll"><table>'+(NODN?'<tr><th>Area</th><th>Method</th><th>Chance</th></tr>':PARTS.length>2?'<tr><th>Area</th><th>Method</th>'+PARTS.map(p=>'<th>'+esc(p)+'</th>').join('')+'</tr>':'<tr><th>Area</th><th>Method</th><th>Day</th><th>Night</th></tr>')+w.map(e=>{
       const area=`<td><a class="al" href="#enc/${e.ai}">${esc(e.area)}</a>${e.sub?`<small>${esc(e.sub)}</small>`:''}</td>`;
       const hm=e.m==='Hidden'?'<small>via DexNav</small>':'';
       const meth=`<td><span class="mchip" data-m="${e.m}">${e.m}</span>${hm}</td>`;
-      if(e.m==='Static'||e.m==='Swarm')return `<tr>${area}${meth}<td${NODN?'':' colspan="2"'}>${e.st.map(s=>`<div>${esc(s[0])} · ${esc(s[1])}</div>`).join('')}</td></tr>`;
-      if(e.n==='same')return `<tr>${area}${meth}<td${NODN?'':' colspan="2"'}>${cell(e.d)}${NODN?'':`<span class="both">${PARTS.length>2?'All day parts':'Day &amp; Night'}</span>`}</td></tr>`;
-      if(e.g)return `<tr>${area}${meth}<td colspan="2">${e.g.filter(x=>x[1]).map(([ls,c])=>`<div><span class="both" style="margin:0 6px 0 0">${esc(ls.join(' · '))}</span>${cell(c)}</div>`).join('')}</td></tr>`;
+      if(e.m==='Static'||e.m==='Swarm')return `<tr>${area}${meth}<td${NODN?'':' colspan="'+(PARTS.length>2?PARTS.length:2)+'"'}>${e.st.map(s=>`<div>${esc(s[0])} · ${esc(s[1])}</div>`).join('')}</td></tr>`;
+      if(e.n==='same')return `<tr>${area}${meth}<td${NODN?'':' colspan="'+(PARTS.length>2?PARTS.length:2)+'"'}>${cell(e.d)}${NODN?'':`<span class="both">${PARTS.length>2?'All day parts':'Day &amp; Night'}</span>`}</td></tr>`;
+      if(e.g)return `<tr>${area}${meth}${e.g.map(([ls,c])=>ls.map(()=>`<td>${c?cell(c):''}</td>`).join('')).join('')}</tr>`;
       return `<tr>${area}${meth}<td>${cell(e.d)}</td><td>${cell(e.n)}</td></tr>`}).join('')+'</table></div>'}
   const pre=[];
   if(c.mg){const e=MPAR[c.k];if(e){const vm=/^(Mega Evolve|Primal Reversion|Ultra Burst) /.exec(e.t);pre.push(`${vm?vm[1]:'Change'} <a href="#dex/${e.a}">${esc(BYKEY[e.a].n)}</a> ${esc(e.t.replace(/^(Mega Evolve|Primal Reversion|Ultra Burst) /,''))}.`)}}

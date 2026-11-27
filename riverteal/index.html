@@ -482,6 +482,13 @@ html[data-theme=dark] #dex .kchip[data-k=t]{background:#8a5a2a}
 @media(max-width:900px){#info .sg>div{flex-basis:calc((100% - 14px)/2)}}
 @media(max-width:640px){#info .sg>div{flex-basis:100%}}
 #infoCtl .controls{margin-top:0}
+.fsec.shrow{display:flex;justify-content:center;align-items:center;gap:.6rem;margin-bottom:.4rem}.fsec.shrow h4{margin:0}
+.shseg{display:inline-flex;border:2px solid var(--line);border-radius:999px;overflow:hidden}
+.shseg button{border:0;background:var(--chipbg);color:var(--ink);font-weight:700;font-size:.8rem;line-height:1.25;padding:.1rem .85rem;cursor:pointer}
+.shseg button[data-v='0'][aria-pressed=true]{background:var(--ink);color:var(--card)}
+.shseg button[data-v='1'][aria-pressed=true]{background:#ffd23f;color:#6b4e00}
+.dc .pic{position:relative}
+.dc.shy .pic:after{content:'★';position:absolute;top:2px;left:5px;color:#e0b000;font-size:.9rem;line-height:1;text-shadow:0 1px 1px rgba(0,0,0,.35)}
 </style>
 <script data-goatcounter="https://veturian.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -716,7 +723,9 @@ function evoWords(t){
   return t.split(' or ').map(one).join(' or ')}
 
 /* ---------- list page ---------- */
-const dxs={q:'',types:new Set(),m:new Set(),ev:new Set(),mode:'cf'};
+const dxs={q:'',types:new Set(),m:new Set(),ev:new Set(),mode:'cf',sh:false};
+try{dxs.sh=localStorage.getItem('dexShiny')==='1'}catch(e){}
+function dxSaveSh(){try{localStorage.setItem('dexShiny',dxs.sh?'1':'0')}catch(e){}}
 const SF=[['dex','Dex number'],['name','Name'],['bst','Total (BST)'],['0','HP'],['1','Attack'],['2','Defense'],['3','Sp. Atk'],['4','Sp. Def'],['5','Speed']];
 $('dsort').innerHTML=SF.map(x=>`<option value="${x[0]}">Sort: ${x[1]}</option>`).join('');
 let ddesc=false;
@@ -743,7 +752,8 @@ function dxRender(){
     if(f==='dex')r=(dxs.mode==='cf'?a.c.rn-b.c.rn:0)||a.i-b.i;else if(f==='name')r=a.c.n.localeCompare(b.c.n)||a.i-b.i;else r=dval(a.c,f)-dval(b.c,f);
     if(f==='dex'||f==='name')return ddesc?-r:r;
     return (ddesc?-r:r)||a.i-b.i});
-  list.forEach(x=>{x.b.innerHTML=hl(x.c.n,ts);x.no.textContent=numOf(x.c);
+  list.forEach(x=>{if(x.sh!==dxs.sh){x.sh=dxs.sh;shinySet(x.el.querySelector('.pic img'),SPR[x.c.k],0,dxs.sh);x.el.classList.toggle('shy',dxs.sh)}
+    x.b.innerHTML=hl(x.c.n,ts);x.no.textContent=numOf(x.c);
     x.ty.innerHTML=[...new Set(x.c.t)].map(t=>`<span class="tp"><span class="ty ty-${t}"></span>${hl(cap(t),ts)}</span>`).join('');
     if(f==='dex'||f==='name')x.sv.hidden=true;else{x.sv.hidden=false;x.sv.textContent=dval(x.c,f)}});
   $('dgrid').replaceChildren(...list.map(x=>x.el));
@@ -759,12 +769,12 @@ function buildDPanel(){
   const ts=TYPES.map(t=>`<button type="button" class="ftype${dxs.types.has(t)?' on':''}" data-df="t" data-v="${t}" title="${cap(t)}" aria-label="${cap(t)}" aria-pressed="${dxs.types.has(t)}"><span class="ty ty-${t}"></span></button>`);
   const ms=METHODS.filter(m=>present.has(m)).map(m=>`<button type="button" class="chip${dxs.m.has(m)?' on':''}" data-m="${m}" data-df="m" data-v="${m}" aria-pressed="${dxs.m.has(m)}">${m}</button>`);
   const es=EVA.map((k,i)=>`<button type="button" class="fev${dxs.ev.has(i)?' on':''}" data-df="e" data-v="${i}" title="${EVN[i]}" aria-pressed="${dxs.ev.has(i)}">${k}</button>`);
-  $('fpanel').innerHTML=`<div class="fsec"><h4>Type</h4>${lines(ts,6,'t')}</div><div class="fsec"><h4>Where it appears</h4>${lines(ms,4)}</div><div class="fsec"><h4>EV yield</h4>${lines(es,3,'e')}</div><div class="ffoot"><button type="button" class="fclr" id="fclr">Clear all</button><button type="button" class="fgo" id="fgo"></button></div>`}
+  $('fpanel').innerHTML=`<div class="fsec shrow"><h4>Sprites</h4><div class="shseg" role="group" aria-label="Sprite colours"><button type="button" data-df="s" data-v="0" aria-pressed="${!dxs.sh}">Normal</button><button type="button" data-df="s" data-v="1" aria-pressed="${dxs.sh}">★ Shiny</button></div></div><div class="fsec"><h4>Type</h4>${lines(ts,6,'t')}</div><div class="fsec"><h4>Where it appears</h4>${lines(ms,4)}</div><div class="fsec"><h4>EV yield</h4>${lines(es,3,'e')}</div><div class="ffoot"><button type="button" class="fclr" id="fclr">Clear all</button><button type="button" class="fgo" id="fgo"></button></div>`}
 let dLast=0;
-function dxSync(n){dLast=n;const c=dxs.types.size+dxs.m.size+dxs.ev.size;const b=$('dbadge');b.textContent=c;b.hidden=!c;
+function dxSync(n){dLast=n;const c=dxs.types.size+dxs.m.size+dxs.ev.size+(dxs.sh?1:0);const b=$('dbadge');b.textContent=c;b.hidden=!c;
   const g=$('fgo');if(g&&pmode==='dex')g.textContent=n?`Show ${n} Pokémon`:'No matches';padHdr()}
-function dxToggle(k,v){const s=k==='t'?dxs.types:k==='m'?dxs.m:dxs.ev;const val=k==='e'?+v:v;s.has(val)?s.delete(val):s.add(val);if(!$('fpanel').hidden)buildDPanel();dxRender()}
-function dxClear(){dxs.types.clear();dxs.m.clear();dxs.ev.clear();if(!$('fpanel').hidden)buildDPanel();dxRender()}
+function dxToggle(k,v){if(k==='s'){dxs.sh=v==='1';dxSaveSh();if(!$('fpanel').hidden)buildDPanel();dxRender();return}const s=k==='t'?dxs.types:k==='m'?dxs.m:dxs.ev;const val=k==='e'?+v:v;s.has(val)?s.delete(val):s.add(val);if(!$('fpanel').hidden)buildDPanel();dxRender()}
+function dxClear(){dxs.types.clear();dxs.m.clear();dxs.ev.clear();dxs.sh=false;dxSaveSh();if(!$('fpanel').hidden)buildDPanel();dxRender()}
 $('dbtn').onclick=()=>{if(!$('fpanel').hidden&&pmode==='dex')return closePanel();pmode='dex';openPanel()};
 
 /* ---------- entry page ---------- */
@@ -837,7 +847,7 @@ function entryHtml(c){
   if(!tabs.some(t=>t[0]===cur.tab))cur.tab=tabs.length?tabs[0][0]:'lv';
   return `<button class="dback" id="dxback" type="button"><span>←</span> Back to Pokédex</button>
  <section class="card hero" id="hero" aria-label="${esc(c.n)} overview">
-  <div class="sprites"><button class="star" id="star" type="button" aria-pressed="false" aria-label="Show shiny sprites" title="Shiny">★</button>
+  <div class="sprites"><button class="star" id="star" type="button" aria-pressed="${cur.shiny}" aria-label="Show shiny sprites" title="Shiny">★</button>
    <div class="pair"><figure><img id="sf" alt="${esc(c.n)} front sprite" src="">Front</figure><figure><img id="sb" alt="${esc(c.n)} back sprite" src="">Back</figure></div>${forms}</div>
   <div><div class="dexno">${numLine(c)}</div><div class="dxname">${esc(c.n)}</div><div class="cat">${esc(c.cat)} Pokémon</div><div class="types" id="htypes"></div>
    <p class="txt">${esc(c.tx)}</p>
@@ -851,7 +861,7 @@ function entryHtml(c){
  <section class="card"><h2 style="text-align:center">Evolution</h2>${hasEvo?`<div class="chainwrap">${etree(root,c.k)}</div>`:'<p style="text-align:center;margin:0;color:var(--muted)">Does not evolve.</p>'}</section>
  <section class="card"><h2>Moves</h2>${tabs.length?`<div class="mtabs" role="tablist" id="mtabs">${tabs.map(([k,l])=>`<button class="mtab" type="button" role="tab" aria-selected="${k===cur.tab}" data-t="${k}">${l} (${(k==='lv'?c.lv:k==='tm'?c.tm:k==='egg'?c.eggm:c.tu).length})</button>`).join('')}</div><div class="scroll" id="mv">${movesBody(c,cur.tab)}</div><div class="note">Click a move for what it does.${[c.nl,c.nt,c.nu,c.ne].some(a=>a.length)?' NEW marks a move this Pokémon does not learn in the base game.':''}</div>`:'<div class="note">No moves listed.</div>'}</section>
  <section class="card where"><h2>Where to find it</h2>${whereHtml(c)}</section>`}
-function showEntryPage(k){const c=BYKEY[k];cur={k,shiny:false,form:0,tab:'lv'};
+function showEntryPage(k){const c=BYKEY[k];cur={k,shiny:dxs.sh,form:0,tab:'lv'};
   E.innerHTML=entryHtml(c);fillSprites();fillTypes();document.title=c.n+' – Pokémon '+HACKNAME+' Pokédex'}
 E.addEventListener('click',e=>{
   if(e.target.closest('#dxback')){location.hash='#dex';return}

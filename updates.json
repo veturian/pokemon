@@ -61,6 +61,14 @@
   {
    "date": "2026-11-26",
    "hacks": [
+    "riverteal"
+   ],
+   "title": "Added Shiny Toggle for entire dex",
+   "details": "New toggle in the filters of the dex tab can turn the entire dex shiny at once; pokemon stay their shiny forms when you open a card. always toggleable off or with \"clear filters\""
+  },
+  {
+   "date": "2026-11-26",
+   "hacks": [
     "mystic-crystal"
    ],
    "title": "Added Atlas tab",
